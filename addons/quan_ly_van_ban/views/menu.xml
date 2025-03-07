@@ -50,6 +50,11 @@
             parent="menu_cau_hinh_van_ban"
             sequence="4"
             action="action_nam" />
+            <menuitem name="Hồ Sơ"
+            id="menu_ho_so"
+            parent="menu_cau_hinh_van_ban"
+            sequence="2"
+            action="action_ho_so" />
 
 
     </data>

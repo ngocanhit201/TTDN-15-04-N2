@@ -10,6 +10,11 @@
                         <div class="oe_read_only" style="font-size:25px">Văn bản đến </div>
                         <group col="4" string="Thông tin chung">
                             <field name="so_hieu" />
+                            <field name="tieu_de"/>
+                            <field name="nguoi_gui"/>
+                            <field name= "id_nguoi_nhan"/>
+                            <field name="ngay_gui"/> 
+                            <field name="id_co_quan_nhan"/>
                             <field name="trich_yeu" />
                             <field name="ngay_den" />
                             <field name="id_loai_van_ban" />
@@ -40,6 +45,11 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="so_hieu" />
+                    <field name="tieu_de"/>
+                    <field name="nguoi_gui"/>
+                    <field name= "id_nguoi_nhan"/>
+                    <field name="ngay_gui"/> 
+                    <field name="id_co_quan_nhan"/>
                     <field name="trich_yeu" />
                     <field name="ngay_den" />
                     <field name="id_loai_van_ban" />
@@ -57,13 +67,18 @@
             <field name="arch" type="xml">
                 <search>
                     <field name="so_hieu" />
+                    <field name="tieu_de"/>
+                    <field name="nguoi_gui"/>
+                    <field name= "id_nguoi_nhan"/>
+                    <field name="ngay_gui"/> 
+                    <field name="id_co_quan_nhan"/>
                     <field name="trich_yeu" />
                     <field name="id_loai_van_ban" />
                 </search>
             </field>
         </record>
         <record id="action_van_ban_den" model="ir.actions.act_window">
-            <field name="name">Quản lý văn bản đến</field>
+            <field name="name">Quản Lý Văn Bản Đến</field>
             <field name="res_model">van_ban_den</field>
             <field name="view_mode">tree,form</field>
             <field name="search_view_id" ref="van_ban_den_search" />

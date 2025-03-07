@@ -5,63 +5,111 @@
             <field name="name">van_ban_di</field>
             <field name="model">van_ban_di</field>
             <field name="arch" type="xml">
-                <form>
+                <form string="Quản lý Văn bản Đi">
                     <sheet>
-                        <div class="oe_read_only" style="font-size:25px">Văn bản</div>
-                        <group col="4" string="Thông tin chung">
-                            <field name="so_hieu" />
-                            <field name="trich_yeu" />
-                            <field name="ngay_di" />
-                            <field name="id_loai_van_ban" />
-                            <field name="id_nguoi_phat_hanh" />
-                            <field name="id_do_mat" />
-                            <field name="id_co_quan_ban_hanh" />
-                            <field name="tep_dinh_kem" widget="pdf_viewer" />
-                            <field name="id_nam" />
+                        <!-- Tiêu đề -->
+                        <div class="oe_title">
+                            <h2 class="text-primary" style="font-size: 25px; font-weight: bold;"> Văn bản</h2>
+                        </div>
 
-                        </group>
+                        <!-- Thông tin chung -->
+                        <div class="card p-3 shadow-sm mb-3">
+                            <h3 class="text-secondary"> Thông tin chung</h3>
+                            <group col="4">
+                                <field name="so_hieu" class="o_form_required"/>
+                                <field name="trich_yeu"/>
+                                <field name="tieu_de"/>
+                            </group>
+                        </div>
+                        <div class="card p-3 shadow-sm mb-3">
+                            <h3 class="text-secondary"> Ngày Loại văn bản</h3>
+                            <group col="4">
+                                <field name="nguoi_nhan"/>
+                                <field name="ngay_nhan"/>
+                            </group>
+                        </div>
+
+                        <!-- Ngày tháng và loại văn bản -->
+                        <div class="card p-3 shadow-sm mb-3">
+                            <h3 class="text-secondary"> Ngày Loại văn bản</h3>
+                            <group col="4">
+                                <field name="ngay_di"/>
+                                <field name="id_loai_van_ban"/>
+                                <field name="id_nguoi_phat_hanh"/>
+                            </group>
+                        </div>
+
+                        <!-- Bảo mật và cơ quan ban hành -->
+                        <div class="card p-3 shadow-sm mb-3">
+                            <h3 class="text-secondary"> Bảo mật  Cơ quan</h3>
+                            <group col="4">
+                                <field name="id_do_mat"/>
+                                <field name="id_co_quan_ban_hanh"/>
+                                <field name="id_nam"/>
+                                <field name="ho_so"/>
+                            </group>
+                        </div>
+
+                        <!-- File đính kèm -->
+                        <div class="card p-3 shadow-sm">
+                            <h3 class="text-secondary"> File đính kèm</h3>
+                            <group col="4">
+                                <field name="tep_dinh_kem" widget="pdf_viewer"/>
+                            </group>
+                        </div>
+
+                        <!-- Ghi chú hoặc nội dung chi tiết -->
+                        <notebook>
+                        </notebook>
                     </sheet>
-
                 </form>
             </field>
         </record>
 
+        <!-- Tree View -->
         <record id="view_van_ban_di_tree" model="ir.ui.view">
             <field name="name">van_ban_di</field>
             <field name="model">van_ban_di</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="so_hieu" />
-                    <field name="trich_yeu" />
-                    <field name="ngay_di" />
-                    <field name="id_loai_van_ban" />
-                    <field name="id_nguoi_phat_hanh" />
-                    <field name="id_do_mat" />
-                    <field name="id_co_quan_ban_hanh" />
-                    <field name="id_nam" />
-
+                    <field name="so_hieu"/>
+                    <field name="trich_yeu"/>
+                    <field name="tieu_de"/>
+                    <field name="nguoi_nhan"/>
+                    <field name="ngay_di"/>
+                    <field name="ho_so"/>
+                    <field name="ngay_nhan"/>
+                    <field name="id_loai_van_ban"/>
+                    <field name="id_nguoi_phat_hanh"/>
+                    <field name="id_do_mat"/>
+                    <field name="id_co_quan_ban_hanh"/>
+                    <field name="id_nam"/>
                 </tree>
             </field>
         </record>
 
+        <!-- Search View -->
         <record model="ir.ui.view" id="van_ban_di_search">
             <field name="model">van_ban_di</field>
             <field name="arch" type="xml">
                 <search>
-                    <field name="so_hieu" />
-                    <field name="trich_yeu" />
-                    <field name="ngay_di" />
-                    <field name="id_loai_van_ban" />
+                    <field name="so_hieu"/>
+                    <field name="trich_yeu"/>
+                    <field name="tieu_de"/>
+                    <field name="nguoi_nhan"/>
+                    <field name="ngay_di"/>
+                    <field name="ngay_nhan"/>
+                    <field name="id_loai_van_ban"/>
                 </search>
             </field>
         </record>
+
+        <!-- Action -->
         <record id="action_van_ban_di" model="ir.actions.act_window">
-            <field name="name">Quản lý văn bản</field>
+            <field name="name">Quản lý Văn Bản Đi</field>
             <field name="res_model">van_ban_di</field>
             <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="van_ban_di_search" />
+            <field name="search_view_id" ref="van_ban_di_search"/>
         </record>
     </data>
 </odoo>
-        
-    

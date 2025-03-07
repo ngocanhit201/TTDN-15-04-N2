@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_ho_so_form" model="ir.ui.view">
+            <field name="name">ho_so</field>
+            <field name="model">ho_so</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_read_only" style="font-size:25px">Hồ Sơ </div>
+                        <group col="4" string="Thông tin chung">
+                            <field name="ho_so" />
+                            <field name="mo_ta"/>
+                            <field name="thoi_gian_bat_dau"/>
+                            <field name= "thoi_gian_ket_thuc"/>
+                            <field name="tinh_trang"/> 
+                            <field name="ghi_chu"/>
+                            <!-- <field name="ids_cong_viec" /> -->
+                            <!-- <field name="tep_dinh_kem" widget="pdf_viewer" /> -->
+
+                        </group>
+                        <!-- <notebook>
+                            <page string="Cong viec">
+                                <field name="ids_cong_viec" />
+                            </page>
+
+                        </notebook> -->
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+
+        <record id="view_ho_so_tree" model="ir.ui.view">
+            <field name="name">ho_so</field>
+            <field name="model">ho_so</field>
+            <field name="arch" type="xml">
+                <tree>
+                   <field name="ho_so" />
+                            <field name="mo_ta"/>
+                            <field name="thoi_gian_bat_dau"/>
+                            <field name= "thoi_gian_ket_thuc"/>
+                            <field name="tinh_trang"/> 
+                            <field name="ghi_chu"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="ho_so_search">
+            <field name="model">ho_so</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="ho_so" />
+                            <field name="mo_ta"/>
+                            <field name="thoi_gian_bat_dau"/>
+                            <field name= "thoi_gian_ket_thuc"/>
+                            <field name="tinh_trang"/> 
+                            <field name="ghi_chu"/>
+                </search>
+            </field>
+        </record>
+        <record id="action_ho_so" model="ir.actions.act_window">
+            <field name="name">Hồ Sơ</field>
+            <field name="res_model">ho_so</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="ho_so_search" />
+        </record>
+    </data>
+</odoo>
+        
+    

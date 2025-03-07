@@ -32,6 +32,7 @@
         'views/van_ban_den.xml',
         'views/nam.xml',
         'views/cong_viec.xml',
+        'views/ho_so.xml',
         'views/menu.xml',
     ],
     # only loaded in demonstration mode
