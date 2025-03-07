@@ -21,7 +21,7 @@
                                 <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
                                     <!-- Tổng văn bản đến -->
                                     <div class="oe_kanban_card"
-                                         style="background: #ffebee; border-radius: 10px; padding: 20px;
+                                         style="background: #fff3e0; border-radius: 10px; padding: 20px;
                                                 box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
                                                 min-width: 250px; flex: 1; text-align: center;">
                                         <h3 style="color: #d32f2f; font-size: 18px;">📩 Tổng văn bản đến</h3>
@@ -73,10 +73,10 @@
                                     </div>
                                     </div>
                                 </div>
-_____________________________________________________________________________________________________________________________________________________________________________________________________________________________________-
+                            <br/>
 
                                 <!-- Hàng Công việc -->
-                        <div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: nowrap;">
+                        <div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: nowrap;height:400px">
                             <!-- Công việc đã hoàn thành -->
                             <div class="oe_kanban_card"
                                 style="background: #f1f8e9; border-radius: 10px; padding: 15px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); flex: 1; text-align: center;">
@@ -97,7 +97,7 @@ ________________________________________________________________________________
 
                             <!-- Công việc hoàn thành muộn -->
                             <div class="oe_kanban_card"
-                                style="background: #fff3e0; border-radius: 10px; padding: 15px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); flex: 1; text-align: center;">
+                                style="background: #ffebee; border-radius: 10px; padding: 15px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); flex: 1; text-align: center;">
                                 <h3 style="color: #ff6f00; font-size: 18px;">⏳ Công việc hoàn thành muộn</h3>
                                     <div style="margin-top: 10px; text-align: left;">
                                         <field name="cong_viec_hoan_thanh_muon_text" style="white-space: pre-line; font-size: 14px;"/>
@@ -105,7 +105,7 @@ ________________________________________________________________________________
                                 </div>
                                     <!-- Công việc đã nhận -->
                                 <div class="oe_kanban_card"
-                                    style="background: #f1f8e9; border-radius: 10px; padding: 15px;box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); flex: 1; text-align: center;">
+                                    style="background: #e3f2fd; border-radius: 10px; padding: 15px;box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); flex: 1; text-align: center;">
                                     <h3 style="color: #33691e; font-size: 18px;">📩 Công việc đã nhận</h3>
                                         <div style="margin-top: 10px; text-align: left;">
                                             <field name="cong_viec_da_nhan_text" style="white-space: pre-line; font-size: 14px;"/>

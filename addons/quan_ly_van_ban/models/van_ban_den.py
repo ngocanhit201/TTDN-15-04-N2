@@ -21,6 +21,7 @@ class VanBanDen(models.Model):
     ids_cong_viec = fields.One2many('cong_viec', 'van_ban_den_ids', string='Công việc')
     nguoi_gui = fields.Text("Người gửi", required=True)
     id_nguoi_nhan =fields.Many2one('nhan_vien', string = 'Người nhận')
+    ho_so = fields.Many2one ('ho_so', string='Ho So')
     @api.depends('ngay_den')
     def _compute_so_hieu(self):
         for record in self:
