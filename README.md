@@ -1,7 +1,14 @@
-Cập nhật tiến độ công việc:
-+ Bảo: Làm trang dashboard (sắp xong)
-+ DA: sửa lại 1 số trường thông tin (sắp xong)
-+ NA: merge code (sắp xong)
+Hệ thống quản lý văn bản 
+Danh sách chức năng
+1. Văn bản đến
+![alt text](image-2.png)
+2. Văn bản đi
+![alt text](image-1.png)
+![alt text](image-4.png)
+3. Quản lý công việc
+![alt text](image-3.png)
+4. Dashboard
+![alt text](image.png)
 ---
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
 ![GitLab](https://img.shields.io/badge/gitlab-%23181717.svg?style=for-the-badge&logo=gitlab&logoColor=white)
