@@ -7,22 +7,52 @@
             <field name="arch" type="xml">
                 <form>
                     <sheet>
-                        <div class="oe_read_only" style="font-size:25px"></div>
-                        <group col="4" string="Thông tin chung">
-                            <field name="id" />
-                            <field name="ten_cong_viec" />
-                            <field name="yeu_cau" />
-                            <field name="ngay_tao" />
-                            <field name="han_xu_ly" />
-                            <field name="trang_thai" />
-                            <field name="chi_dao" />
-                            <field name="chu_tri_giai_quyet" />
-                            <field name="van_ban_den_ids" />
+                        <div class="oe_title">
+                            <h2 class="text-primary" style="font-size: 25px; font-weight: bold;">
+                                Quản lý công việc</h2>
+                        </div>
+                        <!-- Thông tin chung -->
+                        <div class="card p-3 shadow-sm mb-3">
+                            <group col="4">
+                                <field name="id" />
+                                <field name="ten_cong_viec" />
+                                <field name="yeu_cau" />
+                                                            <field name="van_ban_den_ids" />
+
+                            </group>
+                        </div>
+                        <!-- chi tiet 1 -->
+                        <div class="card p-3 shadow-sm mb-3">
+                            <group col="4">
+                                <field name="ngay_tao" />
+                                <field name="han_xu_ly" />
+                                <field name="chi_dao" />
+                                <field name="chu_tri_giai_quyet" />
+
+                            </group>
+                        </div>
+                        <!-- chi tiet 2 -->
+                        <!-- <div class="card p-3 shadow-sm mb-3">
+                            <group col="4">
+                                <field name="ngay_tao" />
+                                <field name="han_xu_ly" />
+                                <field name="chi_dao" />
+                                <field name="chu_tri_giai_quyet" />
+
+                            </group>
+                        </div> -->
+                            <div class="card p-3 shadow-sm mb-3">
+                            <group col="4">
+                           <field name="trang_thai" />
                             <field name="ngay_hoan_thanh" />
                             <field name="tinh_trang" />
 
+                            </group>
+                        </div>
+                        <!-- <group col="4" string="Thông tin chung">
+                            
 
-                        </group>
+                        </group> -->
                     </sheet>
 
                 </form>
@@ -36,15 +66,16 @@
                 <tree>
                     <field name="id" />
                     <field name="ten_cong_viec" />
-                    <field name="yeu_cau" />
+                    <!-- <field name="yeu_cau" /> -->
                     <field name="ngay_tao" />
                     <field name="han_xu_ly" />
-                    <field name="trang_thai" />
                     <field name="chi_dao" />
-                    <field name="chu_tri_giai_quyet" />
+                    <!-- <field name="chu_tri_giai_quyet" /> -->
                     <field name="van_ban_den_ids" />
-                    <field name="ngay_hoan_thanh" />
-                    <field name="tinh_trang" />
+                    <!-- <field name="ngay_hoan_thanh" /> -->
+                    <!-- <field name="tinh_trang" /> -->
+                    <field name="trang_thai" />
+
 
                 </tree>
             </field>

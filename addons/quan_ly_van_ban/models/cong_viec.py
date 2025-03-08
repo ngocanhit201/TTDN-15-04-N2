@@ -18,11 +18,11 @@ class CongViec(models.Model):
         ('huy', 'Huỷ'),
     ], string='Tình trạng')
 
-    trang_thai = fields.Many2one('trang_thai', string='Trạng thái', compute="_compute_trang_thai", store=True , readonly = False)
+    trang_thai = fields.Many2one('trang_thai', string='Trạng thái', compute="_compute_trang_thai", store=True , readonly = True)
     
-    chi_dao = fields.Many2one('nhan_vien', string="Chỉ đạo")
+    chi_dao = fields.Many2one('nhan_vien', string="Chỉ đạo", required=True)
     chu_tri_giai_quyet = fields.Many2one('nhan_vien', string="Chủ trì giải quyết")
-    van_ban_den_ids = fields.Many2one('van_ban_den', string="Văn bản xử lý")
+    van_ban_den_ids = fields.Many2one('van_ban_den', string="Văn bản xử lý", required=True)
 
 
     @api.depends('ngay_hoan_thanh', 'han_xu_ly', 'tinh_trang')

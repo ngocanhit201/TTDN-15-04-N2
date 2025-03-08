@@ -13,8 +13,6 @@
                             <field name="mo_ta"/>
                             <field name="thoi_gian_bat_dau"/>
                             <field name= "thoi_gian_ket_thuc"/>
-                            <field name="tinh_trang"/> 
-                            <field name="ghi_chu"/>
                             <!-- <field name="ids_cong_viec" /> -->
                             <!-- <field name="tep_dinh_kem" widget="pdf_viewer" /> -->
 
@@ -40,8 +38,6 @@
                             <field name="mo_ta"/>
                             <field name="thoi_gian_bat_dau"/>
                             <field name= "thoi_gian_ket_thuc"/>
-                            <field name="tinh_trang"/> 
-                            <field name="ghi_chu"/>
                 </tree>
             </field>
         </record>
@@ -54,8 +50,6 @@
                             <field name="mo_ta"/>
                             <field name="thoi_gian_bat_dau"/>
                             <field name= "thoi_gian_ket_thuc"/>
-                            <field name="tinh_trang"/> 
-                            <field name="ghi_chu"/>
                 </search>
             </field>
         </record>

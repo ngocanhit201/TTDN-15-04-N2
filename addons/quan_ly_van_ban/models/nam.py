@@ -7,7 +7,7 @@ class Nam(models.Model):
     _rec_name = "nam"
 
     id = fields.Integer("ID", required=True)
-    nam = fields.Integer("Năm", required=True)
+    nam = fields.Char("Năm", required=True)
     mo_ta = fields.Char("Mô tả")
 
     van_ban_di_ids = fields.One2many('van_ban_di', 'id_nam', string="Văn bản đi")

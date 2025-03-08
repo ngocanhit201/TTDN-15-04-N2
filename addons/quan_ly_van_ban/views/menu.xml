@@ -12,22 +12,22 @@
             sequence="1"
             action="action_van_ban_di"
         />
-         <menuitem name="Quản lý văn bản đến"
+        <menuitem name="Quản lý văn bản đến"
             id="menu_van_ban_den"
             parent="menu_root"
             sequence="2"
             action="action_van_ban_den"
         />
-         <menuitem name="Quản lý công việc"
+        <!-- <menuitem name="Quản lý công việc"
             id="menu_cong_viec"
             parent="menu_root"
             sequence="2"
             action="action_cong_viec"
-        />
+        /> -->
         <menuitem name="Cấu hình văn bản"
             id="menu_cau_hinh_van_ban"
             parent="menu_root"
-            sequence="3" />
+            sequence="4" />
         <menuitem name="Trạng thái"
             id="menu_trang_thai"
             parent="menu_cau_hinh_van_ban"
@@ -45,17 +45,22 @@
             parent="menu_cau_hinh_van_ban"
             sequence="3"
             action="action_loai_van_ban" />
-         <menuitem name="Năm"
+        <menuitem name="Năm"
             id="menu_nam"
             parent="menu_cau_hinh_van_ban"
             sequence="4"
             action="action_nam" />
-            <menuitem name="Hồ Sơ"
+        <menuitem name="Hồ Sơ"
             id="menu_ho_so"
             parent="menu_cau_hinh_van_ban"
             sequence="2"
             action="action_ho_so" />
 
-
+        <!-- Dashboard Menu -->
+        <menuitem id="menu_cong_viec_dashboard"
+            name="Bảng điều khiển công việc"
+            parent="menu_root"
+            action="action_cong_viec_dashboard"
+            sequence="3" />
     </data>
 </odoo>

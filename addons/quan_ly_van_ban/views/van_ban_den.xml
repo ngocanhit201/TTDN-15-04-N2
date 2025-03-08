@@ -5,85 +5,95 @@
             <field name="name">van_ban_den</field>
             <field name="model">van_ban_den</field>
             <field name="arch" type="xml">
-                <form>
+                <form string="Quản lý Văn bản Đi">
                     <sheet>
-                        <div class="oe_read_only" style="font-size:25px">Văn bản đến </div>
-                        <group col="4" string="Thông tin chung">
-                            <field name="so_hieu" />
-                            <field name="tieu_de"/>
-                            <field name="nguoi_gui"/>
-                            <field name= "id_nguoi_nhan"/>
-                            <field name="ngay_gui"/> 
-                            <field name="id_co_quan_nhan"/>
-                            <field name="trich_yeu" />
-                            <field name="ngay_den" />
-                            <field name="id_loai_van_ban" />
-                            <field name="id_do_mat" />
-                            <field name="id_nam" />
+                        <!-- Tiêu đề -->
+                        <div class="oe_title">
+                            <h2 class="text-primary" style="font-size: 25px; font-weight: bold;">
+                                Văn bản đến</h2>
+                        </div>
 
-                            <field name="co_quan_ban_hanh" />
-                            <!-- <field name="ids_cong_viec" /> -->
+                        <!-- Thông tin chung -->
+                        <div class="card p-3 shadow-sm mb-3">
+                            <group col="4">
+                                <field name="so_hieu" class="o_form_required" />
+                                <field name="tieu_de" />
+                                <field name="trich_yeu" />
+                            </group>
+                        </div>
+                        <!-- thong tin noi gui, nhan -->
+                        <div class="card p-3 shadow-sm mb-3">
+                            <group col="4">
+                                <field name="co_quan_ban_hanh" />
+                                <field name="ngay_den" />
+                                <field name="id_nguoi_nhan" />
+                                <field name="id_co_quan_nhan" />
+                            </group>
+                        </div>
 
-                            <field name="tep_dinh_kem" widget="pdf_viewer" />
 
-                        </group>
+                        <!-- thong tin  -->
+                        <div class="card p-3 shadow-sm mb-3">
+                            <group col="4">
+                                <field name="id_do_mat" />
+                                <field name="id_nam" />
+                                <field name="ho_so" />
+                                <field name="id_loai_van_ban" />
+                            </group>
+                        </div>
+
+                        <!-- File đính kèm -->
+                        <div class="card p-3 shadow-sm">
+                            <h3 class="text-secondary"> File đính kèm</h3>
+                            <group col="4">
+                                <field name="tep_dinh_kem" widget="pdf_viewer" />
+                            </group>
+                        </div>
+
+                        <!-- Ghi chú hoặc nội dung chi tiết -->
                         <notebook>
-                            <page string="Cong viec">
-                                <field name="ids_cong_viec" />
-                            </page>
-
                         </notebook>
                     </sheet>
-
                 </form>
             </field>
         </record>
 
+        <!-- Tree View -->
         <record id="view_van_ban_den_tree" model="ir.ui.view">
             <field name="name">van_ban_den</field>
             <field name="model">van_ban_den</field>
             <field name="arch" type="xml">
                 <tree>
                     <field name="so_hieu" />
-                    <field name="tieu_de"/>
-                    <field name="nguoi_gui"/>
-                    <field name= "id_nguoi_nhan"/>
-                    <field name="ngay_gui"/> 
-                    <field name="id_co_quan_nhan"/>
-                    <field name="trich_yeu" />
-                    <field name="ngay_den" />
+                    <!-- <field name="trich_yeu" /> -->
+                    <field name="tieu_de" />
+                    <field name="ho_so" />
                     <field name="id_loai_van_ban" />
                     <field name="id_do_mat" />
-                    <field name="co_quan_ban_hanh" />
-                    <field name="id_nam" />
-                    
-
+                    <!-- <field name="id_nam" /> -->
                 </tree>
             </field>
         </record>
 
+        <!-- Search View -->
         <record model="ir.ui.view" id="van_ban_den_search">
             <field name="model">van_ban_den</field>
             <field name="arch" type="xml">
                 <search>
                     <field name="so_hieu" />
-                    <field name="tieu_de"/>
-                    <field name="nguoi_gui"/>
-                    <field name= "id_nguoi_nhan"/>
-                    <field name="ngay_gui"/> 
-                    <field name="id_co_quan_nhan"/>
                     <field name="trich_yeu" />
+                    <field name="tieu_de" />
                     <field name="id_loai_van_ban" />
                 </search>
             </field>
         </record>
+
+        <!-- Action -->
         <record id="action_van_ban_den" model="ir.actions.act_window">
-            <field name="name">Quản Lý Văn Bản Đến</field>
+            <field name="name">Quản lý Văn Bản Đến</field>
             <field name="res_model">van_ban_den</field>
             <field name="view_mode">tree,form</field>
             <field name="search_view_id" ref="van_ban_den_search" />
         </record>
     </data>
 </odoo>
-        
-    

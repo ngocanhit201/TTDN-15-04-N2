@@ -1,14 +1,26 @@
-Hệ thống quản lý văn bản 
+Hệ thống quản lý văn bản
 Danh sách chức năng
 1. Văn bản đến
-![alt text](image-2.png)
+![alt text](image-5.png)
+![alt text](image-6.png)
 2. Văn bản đi
 ![alt text](image-1.png)
 ![alt text](image-4.png)
 3. Quản lý công việc
-![alt text](image-3.png)
+![alt text](image-7.png)
+![alt text](image-8.png)
 4. Dashboard
 ![alt text](image.png)
+![alt text](image-9.png)
+5. Một số cấu hình kèm theo:
+
+    Độ mật,
+    Trạng thái,
+    Loại văn bản,
+    Hồ sơ,
+    Năm
+
+![alt text](image-11.png)
 ---
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
 ![GitLab](https://img.shields.io/badge/gitlab-%23181717.svg?style=for-the-badge&logo=gitlab&logoColor=white)
@@ -87,7 +99,7 @@ Lệnh chạy
 source venv/bin/activate
 sudo docker-compose up -d
 python3 odoo-bin.py -c odoo.conf -u all
-python3 odoo-bin.py -c odoo.conf -u quan_ly_van_ban,nhan_su --dev=all
+python3 odoo-bin.py -c odoo.conf -u quan_ly_van_ban,nhan_su,dashboard --dev=all
 ```
 
 
@@ -98,4 +110,4 @@ Hoàn tất
 ssh-keygen
 cat /home/navn/.ssh/id_rsa.pub
 add to your git account
-add remote by ssh link
+add remote by ssh link  

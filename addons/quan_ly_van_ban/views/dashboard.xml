@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Kanban View for Task Dashboard -->
+    <record id="view_cong_viec_kanban" model="ir.ui.view">
+        <field name="name">cong.viec.kanban</field>
+        <field name="model">cong_viec</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="trang_thai" class="o_kanban_small_column">
+                <field name="ten_cong_viec"/>
+                <field name="ngay_tao"/>
+                <field name="han_xu_ly"/>
+                <field name="ngay_hoan_thanh"/>
+                <field name="trang_thai"/>
+                <field name="tinh_trang"/>
+                <field name="chi_dao"/>
+                <field name="chu_tri_giai_quyet"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div class="oe_kanban_content">
+                                <div class="o_kanban_record_title">
+                                    <strong><field name="ten_cong_viec"/></strong>
+                                </div>
+                                <div class="o_kanban_record_subtitle">
+                                    <field name="chi_dao" widget="many2one_avatar"/>
+                                </div>
+                                <div class="oe_kanban_bottom_left">
+                                    <field name="han_xu_ly"/>
+                                </div>
+                                <div class="oe_kanban_bottom_right">
+                                    <field name="trang_thai" widget="label_selection" 
+                                           options="{'classes': {'Hoàn thành': 'success', 'Hoàn thành quá hạn': 'warning', 'Huỷ': 'danger', 'Đã nhận': 'info'}}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Graph View for Tasks -->
+    <record id="view_cong_viec_graph" model="ir.ui.view">
+        <field name="name">cong.viec.graph</field>
+        <field name="model">cong_viec</field>
+        <field name="arch" type="xml">
+            <graph string="Thống kê công việc" type="bar">
+                <field name="trang_thai"/>
+                <field name="ngay_tao" interval="month"/>
+                <field name="ngay_hoan_thanh" interval="month"/>
+            </graph>
+        </field>
+    </record>
+
+    <!-- Pivot View for Tasks -->
+    <record id="view_cong_viec_pivot" model="ir.ui.view">
+        <field name="name">cong.viec.pivot</field>
+        <field name="model">cong_viec</field>
+        <field name="arch" type="xml">
+            <pivot string="Phân tích công việc" display_quantity="true">
+                <field name="trang_thai" type="row"/>
+                <field name="ngay_tao" interval="month" type="col"/>
+                <field name="chu_tri_giai_quyet" type="row"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- Calendar View for Tasks -->
+    <record id="view_cong_viec_calendar" model="ir.ui.view">
+        <field name="name">cong.viec.calendar</field>
+        <field name="model">cong_viec</field>
+        <field name="arch" type="xml">
+            <calendar string="Lịch công việc" date_start="ngay_tao" date_stop="han_xu_ly" color="trang_thai" mode="month">
+                <field name="ten_cong_viec"/>
+                <field name="chu_tri_giai_quyet"/>
+            </calendar>
+        </field>
+    </record>
+
+    <!-- Search View for Tasks -->
+    <record id="view_cong_viec_search" model="ir.ui.view">
+        <field name="name">cong.viec.search</field>
+        <field name="model">cong_viec</field>
+        <field name="arch" type="xml">
+            <search string="Tìm kiếm công việc">
+                <field name="ten_cong_viec"/>
+                <field name="chu_tri_giai_quyet"/>
+                <field name="chi_dao"/>
+                <field name="trang_thai"/>
+                <filter string="Hoàn thành" name="hoan_thanh" domain="[('trang_thai.ten_trang_thai', '=', 'Hoàn thành')]"/>
+                <filter string="Hoàn thành quá hạn" name="hoan_thanh_qua_han" domain="[('trang_thai.ten_trang_thai', '=', 'Hoàn thành quá hạn')]"/>
+                <filter string="Đã nhận" name="da_nhan" domain="[('trang_thai.ten_trang_thai', '=', 'Đã nhận')]"/>
+                <filter string="Huỷ" name="huy" domain="[('trang_thai.ten_trang_thai', '=', 'Huỷ')]"/>
+                <separator/>
+                <filter string="Của tôi" name="my_tasks" domain="[('chu_tri_giai_quyet', '=', uid)]"/>
+                <filter string="Tháng này" name="this_month" domain="[('ngay_tao','&gt;=', (context_today() + relativedelta(day=1)).strftime('%Y-%m-%d'))]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Tình trạng" name="group_by_trang_thai" context="{'group_by': 'trang_thai'}"/>
+                    <filter string="Chủ trì" name="group_by_chu_tri" context="{'group_by': 'chu_tri_giai_quyet'}"/>
+                    <filter string="Chỉ đạo" name="group_by_chi_dao" context="{'group_by': 'chi_dao'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Dashboard Action -->
+    <record id="action_cong_viec_dashboard" model="ir.actions.act_window">
+        <field name="name">Bảng điều khiển công việc</field>
+        <field name="res_model">cong_viec</field>
+        <field name="view_mode">tree,kanban,graph,pivot,calendar,form</field>
+        <field name="search_view_id" ref="view_cong_viec_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Chưa có công việc nào được tạo
+            </p>
+            <p>
+                Tạo công việc mới để quản lý và theo dõi tiến độ của chúng.
+            </p>
+        </field>
+    </record>
+
+
+</odoo>
